@@ -1,8 +1,6 @@
 # Calc-Jupyter-Notebook-Grapher
 Converts string representations of equations to matplotlib graphs or tuples of lists of data using this 
 
-2D or 3D graphs
-
 ## Examples of input
 
 | 2*x + 1  | sin(x) | sin(x+z) | **sin(5\*x)\*cos(5\*z)/5** |
