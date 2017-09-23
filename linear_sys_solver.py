@@ -8,7 +8,15 @@ import scipy.interpolate as interp
 from mpl_toolkits.mplot3d import Axes3D
 
 def solve_2D(formula, points = 100, increment=0.1):
-#     formula = "sin(x)*x**2"
+    """
+    takes a string representation of an equation and creates a tuple of lists with x and y data
+
+    @param {str} formula - string representation of a 
+    @param {int} points - The number of data points created, becareful of using too many
+    @param {float} increment - distance between data points, smaller = more detailed, larger = faster
+
+    @returns {tuple} - x_values, z_values, y_values
+    """
     code = parser.expr(formula).compile()
     x_values = []
 
@@ -19,7 +27,15 @@ def solve_2D(formula, points = 100, increment=0.1):
     
     return x_values, y_values
 def solve_3D(formula, points=100, increment=0.1):
-    #     formula = "sin(x)*x**2"
+    """
+    takes a string representation of an equation and creates a tuple of lists with x, y, and z data
+
+    @param {str} formula - string representation of a 
+    @param {int} points - The number of data points created, becareful of using too many
+    @param {float} increment - distance between data points, smaller = more detailed, larger = faster
+
+    @returns {tuple} - x_values, z_values, y_values
+    """
     code = parser.expr(formula).compile()
     x_values = []
     
@@ -36,10 +52,27 @@ def solve_3D(formula, points=100, increment=0.1):
 
 
 def graph_2D(data):
-    plt.plot(data[0], data[1]);
+    """
+    takes a tuple of data (x, y) and graphs it
+
+    @param {tuple} data - (x_values, y_values) 
+
+    @returns {matplotlib plt} 
+    """
+
+    plt.plot(data[0], data[1])
     return plt.show()
 
 def graph_3D(data, mesh_value=10):
+    """
+    takes a tuple of data (x, y) and graphs it
+
+    @param {tuple} data - (x_values, y_values) 
+    @param {int} mesh_value - the number of meshes / area. larger = more detail
+    
+    @returns {matplotlib plt} 
+    """
+
     plotx,ploty, = np.meshgrid(np.linspace(np.min(data[0]),np.max(data[1]),mesh_value),\
                            np.linspace(np.min(data[1]),np.max(data[1]),mesh_value))
     plotz = interp.griddata((data[0],data[1]),data[2],(plotx,ploty),method='linear')
