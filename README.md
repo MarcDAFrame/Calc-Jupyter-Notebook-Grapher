@@ -5,7 +5,7 @@ Converts string representations of equations to matplotlib graphs or tuples of l
 
 ## Examples of input
 
-| 2*x + 1  | sin(x) | sin(x+z) | sin(5*x)*cos(5*z)/5 |
+| 2*x + 1  | sin(x) | sin(x+z) | **sin(5\*x)\*cos(5\*z)/5** |
 | ------------- | ------------- | ------------- | ------------- |
 | <img src="https://github.com/MarcDAFrame/Calc-Jupyter-Notebook-Grapher/blob/master/git%20imgs/2x%2B1.png" width="200" height="150">  | <img src="https://github.com/MarcDAFrame/Calc-Jupyter-Notebook-Grapher/blob/master/git%20imgs/sin(x).png" width="200" height="150">  | <img src="https://github.com/MarcDAFrame/Calc-Jupyter-Notebook-Grapher/blob/master/git%20imgs/sin(x%2Bz).png" width="200" height="150"> | <img src="https://github.com/MarcDAFrame/Calc-Jupyter-Notebook-Grapher/blob/master/git%20imgs/sin(5*x)*cos(5*z)%205.png" width="200" height="150"> | 
 | | | |
@@ -23,7 +23,7 @@ Converts string representations of equations to matplotlib graphs or tuples of l
 
     @returns {tuple} - x_values, z_values, y_value
     
-  **-solve_3D(formula, points=100, increment=0.1)**
+  **- solve_3D(formula, points=100, increment=0.1)**
   
     takes a string representation of an equation and creates a tuple of lists with x, y, and z data
 
@@ -35,7 +35,7 @@ Converts string representations of equations to matplotlib graphs or tuples of l
 
     @returns {tuple} - x_values, z_values, y_values
     
-  **-graph_2D(data)**
+  **- graph_2D(data)**
 
     takes a tuple of data (x, y) and graphs it
 
@@ -43,7 +43,7 @@ Converts string representations of equations to matplotlib graphs or tuples of l
 
     @returns {matplotlib plt}
   
-  **-graph_3D(data, mesh_value=10)**
+  **- graph_3D(data, mesh_value=10)**
   
     takes a tuple of data (x, y) and graphs it
     
